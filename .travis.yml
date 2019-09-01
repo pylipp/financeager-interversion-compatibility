@@ -2,7 +2,7 @@ language: minimal
 dist: xenial
 
 env:
-  - FINANCEAGER_BACKEND=v0.21 FINANCEAGER_FRONTEND=v0.21
+  - FINANCEAGER_BACKEND=master FINANCEAGER_FRONTEND=master
 
 addons:
   apt:

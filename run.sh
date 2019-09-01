@@ -29,7 +29,18 @@ from financeager import __version__
 print(__version__)"
 
 # Run test
-echo "Running test..."
+cd test
+.venv/bin/python -c "
+import unittest
+import sys
+from test_cli import CliFlaskTestCase, suite
+
+CliFlaskTestCase.launch_server = lambda: 0
+
+test_runner = unittest.TextTestRunner(verbosity=2)
+result = test_runner.run(suite())
+sys.exit(0 if result.wasSuccessful() else 1)
+"
 
 # Terminate webservice
 kill $WEBSERVICE_PID
