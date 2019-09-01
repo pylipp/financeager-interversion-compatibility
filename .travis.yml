@@ -9,15 +9,17 @@ addons:
     packages:
     - python3-venv
 
-before_script: ./prepare.sh
+before_script:
+  - echo backend frontend > result.txt
+  - ./prepare.sh
 
-script: ./run.sh
+script:
+  - echo $FINANCEAGER_BACKEND $FINANCEAGER_FRONTEND >> result.txt
+  - ./run.sh
+  - echo compatible >> result.txt
 
-after_success:
-  - echo -e "Compatible: Backend $FINANCEAGER_BACKEND with $FINANCEAGER_FRONTEND"
-
-after_failure:
-  - echo -e "Incompatible: Backend $FINANCEAGER_BACKEND with $FINANCEAGER_FRONTEND"
+after_script:
+  - cat result.txt
 
 notifications:
     email:
