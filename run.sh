@@ -3,9 +3,7 @@
 set -e
 
 # Check out appropriate backend version
-cd backend
-git checkout "$FINANCEAGER_BACKEND"
-cd ..
+( cd backend && git checkout "$FINANCEAGER_BACKEND" )
 source backend/.venv/bin/activate
 
 # Start webservice
@@ -16,15 +14,12 @@ sleep 2
 deactivate
 
 # Check out appropriate frontend version
-cd frontend
-git checkout "$FINANCEAGER_FRONTEND"
-source .venv/bin/activate
-
-# Output version info
-../python/print_financeager_version
+(cd frontend && git checkout "$FINANCEAGER_FRONTEND")
+source frontend/.venv/bin/activate
 
 # Run test
-cd test
+python/print_financeager_version
+cd frontend/test
 python -c "
 import unittest
 import sys
