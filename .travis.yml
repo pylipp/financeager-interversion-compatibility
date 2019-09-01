@@ -14,10 +14,10 @@ before_script: ./prepare.sh
 script: ./run.sh
 
 after_success:
-  - echo "Compatible: Backend $FINANCEAGER_BACKEND with $FINANCEAGER_FRONTEND"
+  - echo -e "Compatible: Backend $FINANCEAGER_BACKEND with $FINANCEAGER_FRONTEND"
 
 after_failure:
-  - echo "Incompatible: Backend $FINANCEAGER_BACKEND with $FINANCEAGER_FRONTEND"
+  - echo -e "Incompatible: Backend $FINANCEAGER_BACKEND with $FINANCEAGER_FRONTEND"
 
 notifications:
     email:
