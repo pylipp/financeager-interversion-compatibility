@@ -1,0 +1,4 @@
+#!/usr/bin/env python
+from financeager import fflask
+
+fflask.create_app().run()
