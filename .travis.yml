@@ -1,0 +1,24 @@
+language: minimal
+dist: xenial
+
+env:
+  - FINANCEAGER_BACKEND=v0.21 FINANCEAGER_FRONTEND=v0.21
+
+addons:
+  apt:
+    packages:
+    - python3-venv
+
+before_script: ./prepare.sh
+
+script: ./run.sh
+
+after_success:
+  - echo "Compatible: Backend $FINANCEAGER_BACKEND with $FINANCEAGER_FRONTEND"
+
+after_failure:
+  - echo "Incompatible: Backend $FINANCEAGER_BACKEND with $FINANCEAGER_FRONTEND"
+
+notifications:
+    email:
+        on_success: never
