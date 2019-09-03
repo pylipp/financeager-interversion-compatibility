@@ -15,8 +15,7 @@ before_script:
 
 script:
   - echo $FINANCEAGER_BACKEND $FINANCEAGER_FRONTEND >> result.txt
-  - ./run.sh
-  - sed -i '$ s/$/ compatible/' result.txt
+  - ./run.sh && sed -i '$ s/$/ compatible/' result.txt
 
 after_script:
   - cat result.txt
