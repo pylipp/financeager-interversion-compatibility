@@ -4,8 +4,6 @@ import unittest
 import sys
 import os
 
-# Make test modules of relevant repo available
-sys.path.insert(0, os.path.expanduser('~/frontend/test'))
 from test_cli import CliFlaskTestCase, suite
 
 # Patch function because webservice is separately launched

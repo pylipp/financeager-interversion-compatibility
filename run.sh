@@ -19,7 +19,7 @@ source frontend/.venv/bin/activate
 
 # Run test
 python/print_financeager_version
-python/run_test
+PYTHONPATH=frontend/test python/run_test
 deactivate
 
 # Terminate webservice
