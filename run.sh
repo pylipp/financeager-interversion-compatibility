@@ -19,18 +19,7 @@ source frontend/.venv/bin/activate
 
 # Run test
 python/print_financeager_version
-cd frontend/test
-python -c "
-import unittest
-import sys
-from test_cli import CliFlaskTestCase, suite
-
-CliFlaskTestCase.launch_server = lambda: 0
-
-test_runner = unittest.TextTestRunner(verbosity=2)
-result = test_runner.run(suite())
-sys.exit(0 if result.wasSuccessful() else 1)
-"
+python/run_test
 deactivate
 
 # Terminate webservice
