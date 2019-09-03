@@ -8,3 +8,10 @@ The backend (i.e. a local Flask webservice) is started using the `create_app()` 
 A slightly modified version of the `test_cli` module of the financeager test-suite is then run (it does not launch a Flask webservice itself since the webservice was just started separately). This procedure simulates CLI interaction triggering HTTP requests to the webservice.
 
 The results of testing several combinations of frontend and backend versions are stored in a file.
+
+## Compatibility matrix
+
+`V` backend - frontend `>` | master | `v0.22`
+:--- | :---: | :---:
+master | yes | -
+`v0.22` | - | -
