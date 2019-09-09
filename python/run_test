@@ -1,12 +1,10 @@
 #!/usr/bin/env python
 
 import unittest
-import sys
 
 import test_cli
 
 # Patch function because webservice is separately launched
 test_cli.CliFlaskTestCase.launch_server = lambda: 0
 
-program = unittest.main(test_cli, exit=False, verbosity=2)
-sys.exit(0 if program.result.wasSuccessful() else 1)
+unittest.main(test_cli, verbosity=2)
