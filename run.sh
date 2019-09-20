@@ -5,6 +5,7 @@ set -e
 # Check out appropriate backend version
 ( cd backend && git checkout "$FINANCEAGER_BACKEND" )
 source backend/.venv/bin/activate
+pip install -U ./backend
 
 # Start webservice
 python/print_financeager_version
@@ -16,6 +17,7 @@ deactivate
 # Check out appropriate frontend version
 (cd frontend && git checkout "$FINANCEAGER_FRONTEND")
 source frontend/.venv/bin/activate
+pip install -U ./frontend
 
 # Run test
 python/print_financeager_version
