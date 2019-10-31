@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 VERSIONS=( v0.22 c8568d9 )
+EXIT_CODE=0
 
 for FINANCEAGER_BACKEND in "${VERSIONS[@]}"; do
     for FINANCEAGER_FRONTEND in "${VERSIONS[@]}"; do
@@ -29,10 +30,12 @@ for FINANCEAGER_BACKEND in "${VERSIONS[@]}"; do
         # Run test
         python/print_financeager_version
         PYTHONPATH=frontend/test python/run_test &&\
-            sed -i '$ s/$/ compatible/' result.txt
+            sed -i '$ s/$/ compatible/' result.txt || ((EXIT_CODE++))
         deactivate
 
         # Terminate webservice
         kill $WEBSERVICE_PID
     done
 done
+
+exit $EXIT_CODE
