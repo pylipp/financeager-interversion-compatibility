@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSIONS=( v0.22 v0.21 )
+VERSIONS=( v0.22 c8568d9 )
 
 for FINANCEAGER_BACKEND in "${VERSIONS[@]}"; do
     for FINANCEAGER_FRONTEND in "${VERSIONS[@]}"; do
