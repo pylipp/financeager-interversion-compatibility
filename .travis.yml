@@ -5,10 +5,6 @@ cache:
   directories:
   - $HOME/.cache/pip
 
-env:
-  - FINANCEAGER_BACKEND=v0.22 FINANCEAGER_FRONTEND=v0.21
-  - FINANCEAGER_BACKEND=v0.21 FINANCEAGER_FRONTEND=v0.22
-
 addons:
   apt:
     packages:
@@ -19,8 +15,7 @@ before_script:
   - ./prepare.sh
 
 script:
-  - echo $FINANCEAGER_BACKEND $FINANCEAGER_FRONTEND >> result.txt
-  - ./run.sh && sed -i '$ s/$/ compatible/' result.txt
+  - ./run.sh
 
 after_script:
   - cat result.txt
