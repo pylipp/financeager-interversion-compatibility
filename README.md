@@ -11,7 +11,7 @@ The results of testing several combinations of frontend and backend versions are
 
 ## Compatibility matrix
 
-`V` backend - frontend `>` | master | `v0.22`
+backend `V` - frontend `>` | `v0.22` | `v0.21`
 :--- | :---: | :---:
-master | yes | -
-`v0.22` | - | -
+`v0.22` | yes | -
+`v0.21` | -   | yes
